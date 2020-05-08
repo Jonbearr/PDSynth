@@ -1,6 +1,6 @@
 #N canvas -16 -16 3840 1955 12;
 #X obj 701 207 phasor~;
-#X floatatom 731 -88 5 0 0 0 - - -;
+#X floatatom 816 -172 5 0 0 0 - - -;
 #X obj 181 394 *~ 2;
 #X obj 180 427 -~ 1;
 #X obj 435 476 *~ -1;
@@ -12,9 +12,9 @@
 #X obj 287 582 *~ 2;
 #X obj 286 615 -~ 1;
 #X obj 824 404 hsl 128 15 0 1 0 0 empty empty Pulse_Width -2 -8 0 10
--262144 -1 -1 17000 1;
-#X obj 720 -130 hsl 128 15 0 1 0 0 empty empty Freq 10 -8 0 10 -262144
--1 -1 340 1;
+-262144 -1 -1 0 1;
+#X obj 805 -214 hsl 128 15 0 1 0 0 empty empty Freq 10 -8 0 10 -262144
+-1 -1 454 1;
 #X obj 999 387 cos~;
 #X obj 735 314 +~;
 #X obj 744 371 wrap~;
@@ -209,66 +209,76 @@
 #X obj 1179 940 cnv 15 600 300 empty empty OscSource 20 12 0 14 -261234
 -66577 0;
 #X obj 1192 1033 hsl 128 15 0 1 0 0 \$0_InvSawMix empty Inv_Saw_Mix:
--2 -8 0 10 -262144 -1 -1 4700 1;
+-2 -8 0 10 -262144 -1 -1 0 1;
 #X obj 1194 1071 hsl 128 15 0 1 0 0 \$0_TriMix empty Tri_Mix: -2 -8
-0 10 -262144 -1 -1 7000 1;
+0 10 -262144 -1 -1 0 1;
 #X obj 1192 996 hsl 128 15 0 1 0 0 \$0_SawMix empty Saw_Mix: -2 -8
-0 10 -262144 -1 -1 14200 1;
+0 10 -262144 -1 -1 0 1;
 #X obj 1194 1106 hsl 128 15 0 1 0 0 \$0_PulseMix empty Pulse_Mix: -2
--8 0 10 -262144 -1 -1 16200 1;
+-8 0 10 -262144 -1 -1 0 1;
 #X obj 1195 1139 hsl 128 15 0 1 0 0 \$0_SineMix empty Sine_Mix: -2
--8 0 10 -262144 -1 -1 12400 1;
+-8 0 10 -262144 -1 -1 0 1;
 #X obj 867 829 r \$0_InvSawMix;
 #X obj 980 875 r \$0_SawMix;
 #X obj 901 853 r \$0_TriMix;
 #X obj 1075 820 r \$0_PulseMix;
-#X obj 1624 996 hsl 128 15 0 1 0 0 \$0_OutputGain empty Output_Gain:
--2 -8 0 10 -262144 -1 -1 10000 1;
+#X obj 1624 976 hsl 128 15 0 1 0 0 \$0_OutputGain empty Output_Gain:
+-2 -8 0 10 -262144 -1 -1 0 1;
 #X obj 437 1599 *~;
 #X obj 345 1527 r \$0_OutputGain;
 #X obj 1136 847 r \$0_SineMix;
 #X text 1002 1388 ^^Actual Waveform Scaling^^;
 #X obj 1155 911 metro 100;
-#X obj 1625 1178 hsl 128 15 0 1 0 0 \$0_PWM empty Pulse_Width -2 -8
-0 10 -262144 -1 -1 17000 1;
-#X obj 1625 1084 hsl 128 15 0.01 1 1 1 \$0_Freq empty Freq -2 -8 0
-10 -262144 -1 -1 1600 1;
+#X obj 1624 1178 hsl 128 15 0 1 0 0 \$0_PWM empty Pulse_Width -2 -8
+0 10 -262144 -1 -1 0 1;
+#X obj 1624 1032 hsl 128 15 0.01 1 1 1 \$0_Freq empty Freq -2 -8 0
+10 -262144 -1 -1 3200 1;
 #X obj 802 350 r \$0_PWM;
-#X obj 744 -177 r \$0_Freq;
-#X obj 628 94 spigot;
-#X obj 617 2 * 19980;
-#X obj 618 46 + 20;
-#X obj 718 37 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 829 -261 r \$0_Freq;
+#X obj 713 10 spigot;
+#X obj 702 -82 * 19980;
+#X obj 703 -38 + 20;
+#X obj 803 -47 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 786 14 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 871 -70 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 815 -20 * 4;
-#X obj 730 116 spigot;
-#X floatatom 694 147 5 0 0 0 - - -;
-#X obj 813 54 *;
+#X obj 900 -104 * 4;
+#X floatatom 779 63 5 0 0 0 - - -;
 #X obj 1622 1215 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
 0 1;
 #X obj 1637 1272 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 1636 1313 s keyTgl;
-#X obj 741 -18 r keyTgl;
+#X obj 826 -102 r keyTgl;
 #X text 1646 1212 Keyboard Input;
-#X obj 677 -30 loadbang;
+#X obj 762 -114 loadbang;
 #X obj 1173 874 loadbang;
 #X text 1219 1183 Graph;
 #X obj 1213 1272 s graphTrig;
 #X obj 778 1461 r graphTrig;
-#X obj 723 181 s FOut;
-#X obj 1799 1067 r FOut;
-#X floatatom 1623 1105 5 0 0 0 - - -;
-#X obj 642 -229 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 794 120 s FOut;
+#X obj 1798 1015 r FOut;
+#X floatatom 1622 1053 5 0 0 0 - - -;
+#X obj 727 -313 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 901 -286 inlet;
 #X obj 1196 1184 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
-1 1;
+0 1;
 #X obj 599 1544 spigot;
 #X obj 693 1432 loadbang;
 #X obj 634 1481 metro 200;
+#X obj 363 1667 s~ FB;
+#X obj 676 179 +~;
+#X obj 647 73 *~;
+#X obj 659 38 r~ FB;
+#X obj 594 -12 r FB_Amount;
+#X obj 1624 1114 hsl 128 15 0 2000 0 0 empty empty FB_Amount: -2 -8
+0 10 -262144 -1 -1 0 1;
+#X obj 1782 1164 s FB_Amount;
+#X obj 815 32 spigot;
+#X obj 898 -30 *;
+#X obj 986 -370 inlet Kbd;
+#X obj 619 128 +~;
+#X obj 487 -3 inlet~;
 #X connect 0 0 2 0;
 #X connect 0 0 15 0;
 #X connect 0 0 20 0;
@@ -353,6 +363,7 @@
 #X connect 70 0 58 0;
 #X connect 70 0 58 1;
 #X connect 70 0 56 0;
+#X connect 70 0 104 0;
 #X connect 71 0 70 0;
 #X connect 72 0 28 1;
 #X connect 72 0 50 0;
@@ -364,29 +375,36 @@
 #X connect 74 0 62 0;
 #X connect 77 0 12 0;
 #X connect 78 0 13 0;
-#X connect 79 0 86 0;
+#X connect 79 0 85 0;
 #X connect 80 0 81 0;
 #X connect 81 0 79 0;
 #X connect 82 0 79 1;
-#X connect 83 0 85 1;
-#X connect 84 0 87 0;
-#X connect 85 0 86 0;
-#X connect 86 0 0 0;
-#X connect 86 0 98 0;
-#X connect 87 0 85 0;
-#X connect 88 0 89 0;
-#X connect 89 0 90 0;
+#X connect 83 0 111 1;
+#X connect 84 0 112 0;
+#X connect 85 0 96 0;
+#X connect 85 0 105 1;
+#X connect 86 0 87 0;
+#X connect 87 0 88 0;
+#X connect 89 0 82 0;
+#X connect 89 0 83 0;
 #X connect 91 0 82 0;
-#X connect 91 0 83 0;
-#X connect 93 0 82 0;
-#X connect 94 0 74 0;
-#X connect 97 0 104 1;
-#X connect 99 0 100 0;
-#X connect 101 0 13 0;
-#X connect 102 0 87 1;
-#X connect 102 0 101 0;
-#X connect 103 0 96 0;
-#X connect 104 0 56 0;
-#X connect 105 0 106 0;
-#X connect 106 0 104 0;
+#X connect 92 0 74 0;
+#X connect 95 0 101 1;
+#X connect 97 0 98 0;
+#X connect 99 0 13 0;
+#X connect 100 0 94 0;
+#X connect 101 0 56 0;
+#X connect 102 0 103 0;
+#X connect 103 0 101 0;
+#X connect 105 0 0 0;
+#X connect 106 0 114 1;
+#X connect 107 0 106 1;
+#X connect 108 0 106 0;
+#X connect 109 0 110 0;
+#X connect 111 0 85 0;
+#X connect 112 0 111 0;
+#X connect 113 0 99 0;
+#X connect 113 0 112 1;
+#X connect 114 0 105 0;
+#X connect 115 0 114 0;
 #X coords 0 -1 1 1 600 300 2 1180 940;
